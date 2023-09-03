@@ -5,3 +5,4 @@ PiRang atau Pinjam baRang merupakan aplikasi desktop yang membantu suatu desa un
 - Ketua Kelompok : 
 - Anggota 1 : Salma Asma Nadia (21/481008/TK/53088)
 - Anggota 2 : Salwa Maharani (21/481194/TK/53113)
+- Anggota 3 : Moh Rizky Arif (21/478613/TK/52741)
