@@ -1,4 +1,4 @@
-remote_theme: mmistakes/minimal-mistakes
+theme: minimal-mistakes-jekyll
 title : "PiRang"
 description : "Aplikasi desktop yang membantu suatu desa mengatur fasilitas umum desa untuk suatu acara"
 exclude: ['README.md']
