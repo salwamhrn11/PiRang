@@ -30,3 +30,9 @@ Kategori rencana dari aplikasi ini adalah SDGs ke-8, yaitu aplikasi mendukung pr
 ## Aplikasi sejenis yang mirip :
 1. Sewasam
 
+## Use Case Diagram
+![](https://github.com/salwamhrn11/PiRang/blob/main/Use%20Case%20Diagram.png)
+
+## Class Diagram
+![](https://github.com/salwamhrn11/PiRang/blob/main/Class%20Diagram.png)
+
