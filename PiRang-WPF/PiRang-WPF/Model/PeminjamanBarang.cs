@@ -17,7 +17,8 @@ namespace PiRang_WPF.Model
         public int DurasiPeminjaman { get; set;}
         [Required]
         public int Jumlah { get; set; }
-        [Required]
+        
+        public int BarangId { get; set; }
         public Barang Barangs { get; set; }
     }
 }
