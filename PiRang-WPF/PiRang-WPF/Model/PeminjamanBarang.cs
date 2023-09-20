@@ -19,6 +19,6 @@ namespace PiRang_WPF.Model
         public int Jumlah { get; set; }
         
         public int BarangId { get; set; }
-        public Barang Barangs { get; set; }
+        public Barang Barang { get; set; }
     }
 }
