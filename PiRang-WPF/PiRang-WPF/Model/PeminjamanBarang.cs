@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PiRang_WPF.Model
 {
-    public class Pengembalian
+    public class PeminjamanBarang
     {
         [Key]
         public int Id { get; set; }
