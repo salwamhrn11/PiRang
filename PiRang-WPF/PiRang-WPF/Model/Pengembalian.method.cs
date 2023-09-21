@@ -20,7 +20,7 @@ namespace PiRang_WPF.Model
             return Pengembalians.FirstOrDefault(e => e.Id == id);
         }
 
-        // POST METHODS (Adding data to table)
+        // POST METHODS (Add data to table)
         public void AddPengembalian(Pengembalian pengembalian)
         {
             Pengembalians.Add(pengembalian);
