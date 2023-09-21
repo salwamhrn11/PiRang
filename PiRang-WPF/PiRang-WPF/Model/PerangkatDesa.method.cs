@@ -14,16 +14,21 @@ namespace PiRang_WPF.Model
         {
             return PerangkatDesas.ToList();
         }
-        public PerangkatDesa GetPerangkatDesaById(int id)
+        public PerangkatDesa GetPerangkatDesaByUsername(string username)
         {
-            return PerangkatDesas.FirstOrDefault(e => e.Id == id);
+            return PerangkatDesas.FirstOrDefault(e => e.Username == username);
         }
 
-        // POST METHODS (Adding data to table)
+        // POST METHODS (Add data to table)
         public void AddPerangkatDesa(PerangkatDesa perangkatdesa)
         {
             PerangkatDesas.Add(perangkatdesa);
             SaveChanges();
+        }
+        // UPDATE METHODS (Edit data from table)
+        public void EditPerangkatDesa(PerangkatDesa perangkatdesa)
+        {
+            // TODO
         }
     }
 }

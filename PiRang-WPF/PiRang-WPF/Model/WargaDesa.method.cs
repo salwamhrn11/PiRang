@@ -15,16 +15,22 @@ namespace PiRang_WPF.Model
         {
             return WargaDesas.ToList();
         }
-        public WargaDesa GetWargaDesaById(int id)
+        public WargaDesa GetWargaDesaByEmail(string email)
         {
-            return WargaDesas.FirstOrDefault(e => e.Id == id);
+            return WargaDesas.FirstOrDefault(e => e.Email == email);
         }
 
-        // POST METHODS (Adding data to table)
+        // POST METHODS (Add data to table)
         public void AddWargaDesa(WargaDesa wargadesa)
         {
             WargaDesas.Add(wargadesa);
             SaveChanges();
+        }
+
+        // UPDATE METHODS (Edit data from table)
+        public void EditWarga(WargaDesa warga) 
+        {
+            // TODO
         }
     }
 }
