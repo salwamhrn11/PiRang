@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace PiRang_WPF.Model
 {
-    class AppDBContext : DbContext
+    partial class AppDBContext : DbContext
     {
         protected readonly IConfiguration Configuration;
 
@@ -27,69 +27,6 @@ namespace PiRang_WPF.Model
             options.UseNpgsql(Configuration.GetConnectionString("Database"));
         }
 
-        //// WargaDesa
-        // GET METHODS
-        public List<WargaDesa> GetAllWargaDesas()
-        {
-            return WargaDesas.ToList();
-        }
-        public WargaDesa GetWargaDesaById(int id)
-        {
-            return WargaDesas.FirstOrDefault(e => e.Id == id);
-        }
-        // GET METHODS
-        //// WargaDesa
 
-        //// PerangkatDesa
-        // GET METHODS
-        public List<PerangkatDesa> GetAllPerangkatDesas()
-        {
-            return PerangkatDesas.ToList();
-        }
-        public PerangkatDesa GetPerangkatDesaById(int id)
-        {
-            return PerangkatDesas.FirstOrDefault(e => e.Id == id);
-        }
-        // GET METHODS
-        //// PerangkatDesa
-
-        //// Barang
-        // GET METHODS
-        public List<Barang> GetAllBarangs()
-        {
-            return Barangs.ToList();
-        }
-        public Barang GetBarangById(int id)
-        {
-            return Barangs.FirstOrDefault(e => e.Id == id);
-        }
-        // GET METHODS
-        //// Barang
-
-        //// PeminjamanBarang
-        // GET METHODS
-        public List<PeminjamanBarang> GetAllPeminjamanBarangs()
-        {
-            return PeminjamanBarangs.ToList();
-        }
-        public PeminjamanBarang GetPeminjamanBarangById(int id)
-        {
-            return PeminjamanBarangs.FirstOrDefault(e => e.Id == id);
-        }
-        // GET METHODS
-        //// PeminjamanBarang
-
-        //// Pengembalian
-        // GET METHODS
-        public List<Pengembalian> GetAllPengembalians()
-        {
-            return Pengembalians.ToList();
-        }
-        public Pengembalian GetPengembalianById(int id)
-        {
-            return Pengembalians.FirstOrDefault(e => e.Id == id);
-        }
-        // GET METHODS
-        //// Pengembalian
     }
 }
