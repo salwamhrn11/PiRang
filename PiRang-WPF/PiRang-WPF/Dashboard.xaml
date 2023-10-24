@@ -62,7 +62,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Images/background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="Images/background2.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <!--buat search-->
@@ -166,9 +166,25 @@
             />
 
         <!--buat berita-->
-        
+        <Label Content="Berita Hari Ini!" 
+            HorizontalAlignment="Left" 
+            Height="55" 
+            Margin="385,155,0,0" 
+            VerticalAlignment="Top" 
+            Width="420"
+            FontWeight="Bold"
+            FontSize="38"
+            Foreground="#F0F0F0"/>
+
+        <Image Source="Images/berita.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="236" Margin="385,230,0,0" VerticalAlignment="Top" Width="300">
+        </Image>
+        <Image Source="Images/berita.png" Margin="725,230,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="300">
+        </Image>
+        <Image Source="Images/berita.png" Margin="1065,227,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="239" VerticalAlignment="Top" Width="300">
+        </Image>
+        <Image Source="Images/berita.png" Margin="1405,227,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="239" VerticalAlignment="Top" Width="300">
+        </Image>
         <!--
-       
 
         <Rectangle Fill="#4E709D"
                    HorizontalAlignment="Left" 
