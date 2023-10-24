@@ -9,22 +9,254 @@
         ResizeMode="NoResize"
         FontFamily="Roboto"
         Title="Dashboard" Height="1024" Width="1440">
+
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="RoundedTextBoxStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Rectangle Fill="#4E709D" Opacity="0.5" RadiusX="10" RadiusY="10"/>
+                            <Border CornerRadius="10">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="BuatDashboard">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <!-- Latar belakang dengan efek transparansi -->
+                            <Rectangle Fill="#E6D384"  RadiusX="10" RadiusY="10"/>
+
+                            <!-- TextBox di atas latar belakang -->
+                            <Border CornerRadius="10">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="Dashboard1">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="10" Background="Transparent">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        
+
         <!--buat search-->
-        <TextBox HorizontalAlignment="Left" Margin="357,53,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top"
+        <TextBox Style="{StaticResource RoundedTextBoxStyle}"
+                   HorizontalAlignment="Left" Margin="385,45,0,0" TextWrapping="Wrap" Text="Cari atau telusuri di sini!" VerticalAlignment="Top"
                    Height="48"
                    Width="1000"
                    FontSize="24"
-                   FontWeight="Bold"
+                   FontWeight="Medium"
                    Foreground="#F0F0F0"
                    VerticalContentAlignment="Center"
                    HorizontalContentAlignment="Center"
-                   BorderBrush="Transparent"
+                   BorderBrush="Transparent"                    
                   />
+        <Rectangle Fill="#003151"
+                   HorizontalAlignment="Left" 
+                   Height="934" 
+                   VerticalAlignment="Center" 
+                   Opacity="1"
+                   Width="281" Margin="39,0,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <!--buat bagian menu-->
+        <Label Content="PiRang" 
+               HorizontalAlignment="Left" 
+               Height="55" 
+               Margin="106,69,0,0" 
+               VerticalAlignment="Top" 
+               Width="136"
+               FontWeight="Bold"
+               FontSize="38"
+               Foreground="#E6D384"/>
+
+        <TextBox Style="{StaticResource BuatDashboard}"
+                   HorizontalAlignment="Left" Margin="58,279,0,0" TextWrapping="Wrap" Text="   Beranda" VerticalAlignment="Top"
+                   Height="48"
+                   Width="242"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="#003151"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Left"
+                   BorderBrush="Transparent" TextChanged="TextBox_TextChanged"   
+                  />
+        <TextBox Style="{StaticResource Dashboard1}"
+            HorizontalAlignment="Left" Margin="58,339,0,0" TextWrapping="Wrap" Text="   List Peminjaman" VerticalAlignment="Top"
+            Height="48"
+            Width="242"
+            FontSize="22"
+            FontWeight="Medium"
+            Foreground="#FFFFFF"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            BorderBrush="Transparent" 
+            Background="Transparent" />
+        <TextBox Style="{StaticResource Dashboard1}"
+            HorizontalAlignment="Left" Margin="58,399,0,0" TextWrapping="Wrap" Text="   Peminjaman" VerticalAlignment="Top"
+            Height="48"
+            Width="240"
+            FontSize="22"
+            FontWeight="Medium"
+            Foreground="#FFFFFF"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            BorderBrush="Transparent"   
+            Background="Transparent"
+            />
+
+        <Label Content="MENU" 
+               HorizontalAlignment="Left" 
+               Height="35" 
+               Margin="58,229,0,0" 
+               VerticalAlignment="Top" 
+               Width="78"
+               FontWeight="Regular"
+               FontSize="24"
+               Foreground="#E6D384"/>
+
+        <!--buat bagian dashboard help-->
+        <Label Content="HELP" 
+            HorizontalAlignment="Left" 
+            Height="36" 
+            Margin="58,498,0,0" 
+            VerticalAlignment="Top" 
+            Width="78"
+            FontWeight="Regular"
+            FontSize="24"
+            Foreground="#E6D384"/>
+        <TextBox Style="{StaticResource Dashboard1}"
+            HorizontalAlignment="Left" Margin="58,540,0,0" TextWrapping="Wrap" Text="   Pengaturan" VerticalAlignment="Top"
+            Height="48"
+            Width="240"
+            FontSize="22"
+            FontWeight="Medium"
+            Foreground="#FFFFFF"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            BorderBrush="Transparent"   
+            Background="Transparent"
+            />
+
+        <!--buat berita-->
+        
+        <!--
+       
+
+        <Rectangle Fill="#4E709D"
+                   HorizontalAlignment="Left" 
+                   Height="220" 
+                   VerticalAlignment="Top" 
+                   Opacity="0.75"
+                   Width="300" Margin="385,230,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="220" 
+            VerticalAlignment="Top" 
+            Opacity="0.75"
+            Width="300" Margin="725,230,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="220" 
+            VerticalAlignment="Top" 
+            Opacity="0.75"
+            Width="300" Margin="1065,227,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="220" 
+            VerticalAlignment="Top" 
+            Opacity="0.75"
+            Width="300" Margin="1405,227,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        -->
+
+        <!--buat feeds instagram-->
+        <Label Content="Instagram's Feeds ^o^" 
+            HorizontalAlignment="Left" 
+            Height="55" 
+            Margin="385,516,0,0" 
+            VerticalAlignment="Top" 
+            Width="420"
+            FontWeight="Bold"
+            FontSize="38"
+            Foreground="#F0F0F0"/>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="300" 
+            VerticalAlignment="Top" 
+            Opacity="0.6"
+            Width="300" Margin="385,592,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="300" 
+            VerticalAlignment="Top" 
+            Opacity="0.6"
+            Width="300" Margin="725,592,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="300" 
+            VerticalAlignment="Top" 
+            Opacity="0.6"
+            Width="300" Margin="1065,592,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Rectangle Fill="#4E709D"
+            HorizontalAlignment="Left" 
+            Height="300" 
+            VerticalAlignment="Top" 
+            Opacity="0.6"
+            Width="300" Margin="1405,592,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+
+
+
 
     </Grid>
 </Window>

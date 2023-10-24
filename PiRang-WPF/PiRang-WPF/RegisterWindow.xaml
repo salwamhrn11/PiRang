@@ -9,8 +9,8 @@
         ResizeMode="NoResize"
         FontFamily="Roboto"
         Title="Register" Height="1024" Width="1440">
-
-    <Window.Resources>
+    
+       <Window.Resources>
         <Style TargetType="TextBox" x:Key="RoundedTextBoxStyle">
             <Setter Property="Template">
                 <Setter.Value>

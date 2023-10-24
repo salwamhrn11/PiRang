@@ -7,21 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\Dashboard.xaml.cs">
+    <Compile Update="Dashboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\RegisterWindow.xaml.cs">
+    <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\Dashboard.xaml">
+    <Page Update="Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\RegisterWindow.xaml">
+    <Page Update="RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
