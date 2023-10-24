@@ -5,8 +5,161 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PiRang_WPF"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="800">
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        FontFamily="Roboto"
+        Title="Register" Height="1024" Width="1440">
+
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="RoundedTextBoxStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="10" Background="#003151">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="RoundedBottomTextBoxStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="0,0,10,10" Background="#003151" >
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Rectangle Fill="#F0F0F0" HorizontalAlignment="Center" Height="733"  VerticalAlignment="Center" Width="1126">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Image Source="Images/Rectangle 3.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="733" Margin="157,0,0,0" VerticalAlignment="Center" Width="573">
+        </Image>
         
+        <!--buat welcome -->
+        <Label Content="Welcome to PiRang!" 
+               HorizontalAlignment="Left" 
+               Height="55" 
+               Margin="272,222,0,0" 
+               VerticalAlignment="Top" 
+               Width="382"
+               FontWeight="Bold"
+               FontSize="38"
+               Foreground="#003151"/>
+        
+        <!--buat register-->
+        <Label Content="Register" 
+               HorizontalAlignment="Left" 
+               Height="55" 
+               Margin="778,270,0,0" 
+               VerticalAlignment="Top" 
+               Width="382"
+               FontWeight="Bold"
+               FontSize="38"
+               Foreground="#003151"/>
+        
+        
+        <!--buat email-->
+        <Label Content="EMAIL" 
+               HorizontalAlignment="Left" 
+               Height="34" 
+               Margin="778,345,0,0" 
+               VerticalAlignment="Top" 
+               Width="382"
+               FontWeight="Medium"
+               FontSize="24"
+               Foreground="#000000"/>
+        <Label Content="Masukkan Email Anda" 
+               HorizontalAlignment="Left" 
+               Margin="778,385,0,0" 
+               VerticalAlignment="Top" 
+               FontWeight="Regular"
+               FontSize="16"
+               Foreground="#514A4A"/>
+        <Line X1="0" Y1="0" X2="425" Y2="0" Stroke="#514A4A" StrokeThickness="1" Margin="778,420,0,-18"/>
+        
+        <!--buat no hp-->
+        <Label Content="NO. HANDPHONE" 
+               HorizontalAlignment="Left" 
+               Height="34" 
+               Margin="778,467,0,0" 
+               VerticalAlignment="Top" 
+               Width="382"
+               FontWeight="Medium"
+               FontSize="24"
+               Foreground="#000000"/>
+        <Label Content="Masukkan Nomor Anda" 
+               HorizontalAlignment="Left" 
+               Margin="778,507,0,0" 
+               VerticalAlignment="Top" 
+               FontWeight="Regular"
+               FontSize="16"
+               Foreground="#514A4A"/>
+        <Line X1="0" Y1="0" X2="425" Y2="0" Stroke="#514A4A" StrokeThickness="1" Margin="778,542,0,-18"/>
+
+        <!--buat password-->
+        <Label Content="PASSWORD" 
+               HorizontalAlignment="Left" 
+               Height="34" 
+               Margin="778,590,0,0" 
+               VerticalAlignment="Top" 
+               Width="382"
+               FontWeight="Medium"
+               FontSize="24"
+               Foreground="#000000"/>
+        <Label Content="Masukkan Password Anda" 
+               HorizontalAlignment="Left" 
+               Margin="778,630,0,0" 
+               VerticalAlignment="Top" 
+               FontWeight="Regular"
+               FontSize="16"
+               Foreground="#514A4A"/>
+        <Line X1="0" Y1="0" X2="425" Y2="0" Stroke="#514A4A" StrokeThickness="1" Margin="778,665,0,-18"/>
+        
+        <!--buat textbox sign up-->
+        <TextBox Style="{StaticResource RoundedTextBoxStyle}"
+            HorizontalAlignment="Left" Margin="778,700,0,0" TextWrapping="Wrap" Text="Sign Up" VerticalAlignment="Top" Width="435" Height="52"
+                 FontSize="24"
+                 FontWeight="Medium"
+                 Foreground="#F0F0F0"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Center"
+                 />
+        
+        <!--buat register atas sm login-->
+        <TextBox Style="{StaticResource RoundedBottomTextBoxStyle}" 
+            HorizontalAlignment="Left" Margin="1081,145,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top"
+                   Height="48"
+                   Width="121"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Foreground="#F0F0F0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   BorderBrush="Transparent"
+                  />
+        <TextBox 
+            HorizontalAlignment="Left" Margin="960,145,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"
+            Height="48"
+            Width="121"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="#000000"
+            Background="Transparent"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            BorderBrush="Transparent"/>
     </Grid>
 </Window>
