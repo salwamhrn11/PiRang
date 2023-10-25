@@ -358,9 +358,5 @@
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>-->
-
-
-
-
     </Grid>
 </Window>
