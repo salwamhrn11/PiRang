@@ -2,15 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Compile Update="DashboardKelolaBarang.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="FormPeminjaman.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="PopUpBarang.xaml.cs">
-=======
     <Compile Update="View\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,20 +9,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\StartWindow.xaml.cs">
->>>>>>> Stashed changes
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Page Update="DashboardKelolaBarang.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="FormPeminjaman.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="PopUpBarang.xaml">
-=======
     <Page Update="Themes\LoginRegisterButtonTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -42,7 +23,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\StartWindow.xaml">
->>>>>>> Stashed changes
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
