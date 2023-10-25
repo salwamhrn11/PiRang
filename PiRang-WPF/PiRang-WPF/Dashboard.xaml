@@ -16,7 +16,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Grid>
-                            <Rectangle Fill="#A4BFE1" Opacity="0.5" RadiusX="10" RadiusY="10"/>
+                            <Rectangle Fill="#003151" Opacity="0.95" RadiusX="10" RadiusY="10"/>
                             <Border CornerRadius="10">
                                 <ScrollViewer x:Name="PART_ContentHost"/>
                             </Border>
@@ -60,11 +60,15 @@
 
     </Window.Resources>
 
-    <Grid Background="#001B2D">
-        <Grid.ColumnDefinitions>
+    <Grid>
+        <!-- <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="84"/>
         </Grid.ColumnDefinitions>
+        -->
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background3.png" Stretch="UniformToFill"/>
+        </Grid.Background>
 
         <!--<Grid.Background>
             <ImageBrush ImageSource="Images/background2.png" Stretch="UniformToFill"/>
@@ -74,10 +78,10 @@
         <!--buat search-->
         <Rectangle Fill="#003151"
             HorizontalAlignment="Left" 
-            Height="822" 
+            Height="836" 
             VerticalAlignment="Top" 
-            Opacity="0.7"
-            Width="1008" Margin="353,157,0,0" Grid.ColumnSpan="2">
+            Opacity="0.95"
+            Width="1008" Margin="353,143,0,0">
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>
@@ -110,13 +114,13 @@
                    HorizontalAlignment="Left" 
                    Height="934" 
                    VerticalAlignment="Center" 
-                   Opacity="0.7"
+                   Opacity="0.95"
                    Width="281" Margin="39,0,0,0">
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>
         <!--buat bagian menu-->
-        <Label Content="PiRang" 
+        <!-- <Label Content="PiRang" 
                HorizontalAlignment="Left" 
                Height="55" 
                Margin="106,69,0,0" 
@@ -124,7 +128,10 @@
                Width="136"
                FontWeight="Bold"
                FontSize="38"
-               Foreground="#E6D384"/>
+               Foreground="#E6D384"/>-->
+
+        <Image Source="Images/pirang.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="218" Margin="54,-5,0,0" VerticalAlignment="Top" Width="252"/>
+
 
         <TextBox Style="{StaticResource BuatDashboard}"
                    HorizontalAlignment="Left" Margin="58,279,0,0" TextWrapping="Wrap" Text="   Beranda" VerticalAlignment="Top"
@@ -351,9 +358,5 @@
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>-->
-
-
-
-
     </Grid>
 </Window>
