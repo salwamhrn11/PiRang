@@ -11,6 +11,9 @@
     <Compile Update="PopUpBarang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\DashboardWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +21,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\StartWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TestWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -34,6 +40,9 @@
     <Page Update="Themes\LoginRegisterButtonTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\DashboardWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -41,6 +50,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\StartWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

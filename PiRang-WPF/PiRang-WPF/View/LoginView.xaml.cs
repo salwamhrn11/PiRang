@@ -24,5 +24,26 @@ namespace PiRang_WPF.View
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (Application.Current.MainWindow is StartWindow startWindow)
+            {
+                startWindow.Hide();
+            }
+
+            // Open the DashboardWindow
+            DashboardWindow dashboardWindow = new DashboardWindow();
+            dashboardWindow.Closed += (sender, args) =>
+            {
+                // Show the StartWindow when the DashboardWindow is closed
+                if (Application.Current.MainWindow is StartWindow start)
+                {
+                    start.Show();
+                }
+            };
+
+            dashboardWindow.Show();
+        }
     }
 }
