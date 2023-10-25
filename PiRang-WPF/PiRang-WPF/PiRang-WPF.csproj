@@ -9,6 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\mail.png" />
+    <None Remove="Icons\padlock.png" />
+    <None Remove="Images\4274013.jpg" />
+    <None Remove="Images\background.png" />
+    <None Remove="Images\background2.png" />
+    <None Remove="Images\berita.png" />
+    <None Remove="Images\kipas.jpg" />
+    <None Remove="Images\kursi tamu.jpg" />
+    <None Remove="Images\meja acara.jpg" />
+    <None Remove="Images\microphone dan sound system.jpg" />
+    <None Remove="Images\panggung.jpg" />
+    <None Remove="Images\Rectangle 3.png" />
+    <None Remove="Images\tenda acara besar.jpg" />
+    <None Remove="Images\tenda booth.jpg" />
+    <None Remove="Images\tirai dekorasi.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.22">
       <PrivateAssets>all</PrivateAssets>
@@ -16,15 +34,30 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
   </ItemGroup>
 
   <ItemGroup>
-	<Folder Include="Icons\" />
-	<Folder Include="Core\" />
-	<Folder Include="Themes\" />
-	<Folder Include="ViewModel\" />
-	<Folder Include="View\" />
+	<Folder Include="images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\mail.png" />
+    <Resource Include="Icons\padlock.png" />
+    <Resource Include="Images\4274013.jpg" />
+    <Resource Include="Images\background.png" />
+    <Resource Include="Images\background2.png" />
+    <Resource Include="Images\berita.png" />
+    <Resource Include="Images\kipas.jpg" />
+    <Resource Include="Images\kursi tamu.jpg" />
+    <Resource Include="Images\meja acara.jpg" />
+    <Resource Include="Images\microphone dan sound system.jpg" />
+    <Resource Include="Images\panggung.jpg" />
+    <Resource Include="Images\Rectangle 3.png" />
+    <Resource Include="Images\tenda acara besar.jpg" />
+    <Resource Include="Images\tenda booth.jpg" />
+    <Resource Include="Images\tirai dekorasi.jpeg" />
   </ItemGroup>
 
 </Project>

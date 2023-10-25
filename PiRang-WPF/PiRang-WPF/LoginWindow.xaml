@@ -36,14 +36,13 @@
     </Window.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Images/background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/Images/background.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Rectangle Fill="#F0F0F0" HorizontalAlignment="Center" Height="733"  VerticalAlignment="Center" Width="1126">
+        <Rectangle Fill="#F0F0F0" HorizontalAlignment="Center" Width="1126" Margin="0,146,0,146">
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>
-        <Image Source="Images/Rectangle 3.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="733" Margin="157,0,0,0" VerticalAlignment="Center" Width="573">
-        </Image>
+        <Image Source="Images/Rectangle 3.png" Stretch="UniformToFill" Height="732" Margin="157,0,710,0" VerticalAlignment="Center"/>
 
         <!--buat welcome -->
         <Label Content="Welcome to PiRang!" 
@@ -109,7 +108,8 @@
 
         <!--buat textbox log in-->
         <TextBox Style="{StaticResource RoundedTextBoxStyle}"
-        HorizontalAlignment="Left" Margin="778,568,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="435" Height="52"
+        HorizontalAlignment="Left" Margin="778,568,0,404" 
+            TextWrapping="Wrap" Text="Login" Width="435"
              FontSize="24"
              FontWeight="Medium"
              Foreground="#F0F0F0"
@@ -131,7 +131,8 @@
                BorderBrush="Transparent"
               />
         <TextBox 
-        HorizontalAlignment="Left" Margin="1081,145,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top"
+        HorizontalAlignment="Left" Margin="1081,145,0,0" TextWrapping="Wrap" 
+            Text="Register" VerticalAlignment="Top"
         Height="48"
         Width="121"
         FontSize="24"
