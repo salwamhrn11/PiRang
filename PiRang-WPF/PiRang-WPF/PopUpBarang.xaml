@@ -5,8 +5,89 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PiRang_WPF"
         mc:Ignorable="d"
-        Title="PopUpBarang" Height="450" Width="800">
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        FontFamily="Roboto"
+        Title="PopUpBarang" Height="700" Width="450">
+
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="RoundedTextBoxStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Rectangle Fill="#FFEDA1" Opacity="1" RadiusX="10" RadiusY="10"/>
+                            <Border CornerRadius="10">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background3.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <!--buat barang-->
+        <Rectangle Fill="#003151"
+            HorizontalAlignment="Center" 
+            Height="364" 
+            VerticalAlignment="Top" 
+            Opacity="1"
+            Width="306" RenderTransformOrigin="0.51,0.432" Margin="0,146,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+        <Image Source="Images/tenda booth.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="122,187,0,0" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Nama : Tenda Booth" 
+               HorizontalAlignment="Center" 
+               Height="46" 
+               Margin="0,406,0,0" 
+               VerticalAlignment="Top" 
+               Width="242"
+               FontWeight="Medium"
+               FontSize="20"
+               Foreground="#ffffff"/>
+        <Label Content="Jumlah : 6" 
+               HorizontalAlignment="Center" 
+               Height="46" 
+               Margin="0,442,0,0" 
+               VerticalAlignment="Top" 
+               Width="242"
+               FontWeight="Medium"
+               FontSize="20"
+               Foreground="#ffffff"/>
+        <Label Content="Tambah Barang!" 
+               HorizontalAlignment="Center" 
+               Height="64" 
+               Margin="0,49,0,0" 
+               VerticalAlignment="Top" 
+               Width="306"
+               FontWeight="Bold"
+               FontSize="38"
+               Foreground="#FFEDA1">
+            <Label.Effect>
+                <DropShadowEffect Color="Black" Direction="200" ShadowDepth="3" Opacity="0.9" />
+            </Label.Effect>
+        </Label>
+
+        <!--buat upload-->
+        <TextBox Style="{StaticResource RoundedTextBoxStyle}"
+                   HorizontalAlignment="Left" Margin="259,554,0,0" TextWrapping="Wrap" Text="   Upload" VerticalAlignment="Top"
+                   Height="50"
+                   Width="119"
+                   FontSize="24"
+                   FontWeight="Regular"
+                   Foreground="#003151"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Left">
+            <TextBox.Effect>
+                <DropShadowEffect Color="Black" Direction="210" ShadowDepth="5" Opacity="0.5" />
+            </TextBox.Effect>
+        </TextBox>
     </Grid>
 </Window>
