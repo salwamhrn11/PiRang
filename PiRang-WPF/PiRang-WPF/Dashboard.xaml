@@ -16,7 +16,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Grid>
-                            <Rectangle Fill="#4E709D" Opacity="0.5" RadiusX="10" RadiusY="10"/>
+                            <Rectangle Fill="#003151" Opacity="0.5" RadiusX="10" RadiusY="10"/>
                             <Border CornerRadius="10">
                                 <ScrollViewer x:Name="PART_ContentHost"/>
                             </Border>
@@ -66,15 +66,39 @@
         </Grid.Background>
 
         <!--buat search-->
+        <Rectangle Fill="#003151"
+            HorizontalAlignment="Left" 
+            Height="415" 
+            VerticalAlignment="Top" 
+            Opacity="0.5"
+            Width="1058" Margin="346,564,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+
+
+
+
+        <Rectangle Fill="#003151"
+                   HorizontalAlignment="Left" 
+                   Height="356" 
+                   VerticalAlignment="Top" 
+                   Opacity="0.5"
+                   Width="1057" Margin="352,149,0,0">
+            <Rectangle.RadiusX>15</Rectangle.RadiusX>
+            <Rectangle.RadiusY>15</Rectangle.RadiusY>
+        </Rectangle>
+
+        <!--buat search-->
         <TextBox Style="{StaticResource RoundedTextBoxStyle}"
-                   HorizontalAlignment="Left" Margin="385,45,0,0" TextWrapping="Wrap" Text="Cari atau telusuri di sini!" VerticalAlignment="Top"
-                   Height="48"
-                   Width="1000"
+                   HorizontalAlignment="Left" Margin="352,45,0,0" TextWrapping="Wrap" Text="   Cari atau telusuri di sini!" VerticalAlignment="Top"
+                   Height="50"
+                   Width="1052"
                    FontSize="24"
-                   FontWeight="Medium"
+                   FontWeight="Regular"
                    Foreground="#F0F0F0"
                    VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center"
+                   HorizontalContentAlignment="Left"
                    BorderBrush="Transparent"                    
                   />
         <Rectangle Fill="#003151"
@@ -174,61 +198,18 @@
             Width="420"
             FontWeight="Bold"
             FontSize="38"
-            Foreground="#F0F0F0"/>
+            Foreground="#F0F0F0"
+            />
 
-        <Image Source="Images/berita.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="236" Margin="385,230,0,0" VerticalAlignment="Top" Width="300">
-        </Image>
-        <Image Source="Images/berita.png" Margin="725,230,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="300">
-        </Image>
-        <Image Source="Images/berita.png" Margin="1065,227,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="239" VerticalAlignment="Top" Width="300">
-        </Image>
-        <Image Source="Images/berita.png" Margin="1405,227,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="239" VerticalAlignment="Top" Width="300">
-        </Image>
-        <!--
-
-        <Rectangle Fill="#4E709D"
-                   HorizontalAlignment="Left" 
-                   Height="220" 
-                   VerticalAlignment="Top" 
-                   Opacity="0.75"
-                   Width="300" Margin="385,230,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Rectangle Fill="#4E709D"
-            HorizontalAlignment="Left" 
-            Height="220" 
-            VerticalAlignment="Top" 
-            Opacity="0.75"
-            Width="300" Margin="725,230,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Rectangle Fill="#4E709D"
-            HorizontalAlignment="Left" 
-            Height="220" 
-            VerticalAlignment="Top" 
-            Opacity="0.75"
-            Width="300" Margin="1065,227,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Rectangle Fill="#4E709D"
-            HorizontalAlignment="Left" 
-            Height="220" 
-            VerticalAlignment="Top" 
-            Opacity="0.75"
-            Width="300" Margin="1405,227,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        -->
+        <Image Source="Images/berita.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="236" Margin="385,230,0,0" VerticalAlignment="Top" Width="300"/>
+        <Image Source="Images/berita.png" Margin="725,230,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="300"/>
+        <Image Source="Images/berita.png" Margin="1065,227,0,0" Stretch="UniformToFill" HorizontalAlignment="Left" Height="239" VerticalAlignment="Top" Width="300"/>
 
         <!--buat feeds instagram-->
         <Label Content="Instagram's Feeds ^o^" 
             HorizontalAlignment="Left" 
             Height="55" 
-            Margin="385,516,0,0" 
+            Margin="385,570,0,0" 
             VerticalAlignment="Top" 
             Width="420"
             FontWeight="Bold"
@@ -239,7 +220,7 @@
             Height="300" 
             VerticalAlignment="Top" 
             Opacity="0.6"
-            Width="300" Margin="385,592,0,0">
+            Width="300" Margin="385,646,0,0">
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>
@@ -248,7 +229,7 @@
             Height="300" 
             VerticalAlignment="Top" 
             Opacity="0.6"
-            Width="300" Margin="725,592,0,0">
+            Width="300" Margin="725,646,0,0">
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>
@@ -257,16 +238,7 @@
             Height="300" 
             VerticalAlignment="Top" 
             Opacity="0.6"
-            Width="300" Margin="1065,592,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Rectangle Fill="#4E709D"
-            HorizontalAlignment="Left" 
-            Height="300" 
-            VerticalAlignment="Top" 
-            Opacity="0.6"
-            Width="300" Margin="1405,592,0,0">
+            Width="300" Margin="1065,646,0,0">
             <Rectangle.RadiusX>15</Rectangle.RadiusX>
             <Rectangle.RadiusY>15</Rectangle.RadiusY>
         </Rectangle>
