@@ -29,11 +29,15 @@ namespace PiRang_WPF.View
         {
             if (Application.Current.MainWindow is StartWindow startWindow)
             {
-                startWindow.Hide();
+                DashboardWindow dashboardWindow = new DashboardWindow();
+                dashboardWindow.Show();
+
+                /*startWindow.Hide();*/
+                startWindow.Close();
             }
 
             // Open the DashboardWindow
-            DashboardWindow dashboardWindow = new DashboardWindow();
+            /*DashboardWindow dashboardWindow = new DashboardWindow();
             dashboardWindow.Closed += (sender, args) =>
             {
                 // Show the StartWindow when the DashboardWindow is closed
@@ -43,7 +47,7 @@ namespace PiRang_WPF.View
                 }
             };
 
-            dashboardWindow.Show();
+            dashboardWindow.Show();*/
         }
     }
 }

@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="90"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Register" 
@@ -48,6 +48,27 @@
                      Background="Transparent"
                      BorderThickness="0,0,0,1"
                      BorderBrush="#514A4A"/>
+            <TextBlock Text="NO. HANDPHONE" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   FontWeight="Regular"
+                   Margin="0,15,0,0"
+                   FontSize="14"
+                   Foreground="#000000"
+                   Grid.Row="1" Grid.Column="1"
+                   />
+            <TextBox x:Name="txtHP"
+                     FontSize="12"
+                     Margin="0,5,0,0"
+                     Height="28"
+                     VerticalAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Text="Masukkan Password Anda"
+                     FontWeight="Normal"
+                     Background="Transparent"
+                     Foreground="#514A4A"
+                     BorderThickness="0,0,0,1"
+                     BorderBrush="#514A4A"/>
             <TextBlock Text="PASSWORD" 
                    HorizontalAlignment="Left" 
                    VerticalAlignment="Top" 
@@ -69,6 +90,33 @@
                      Foreground="#514A4A"
                      BorderThickness="0,0,0,1"
                      BorderBrush="#514A4A"/>
+            <Button Content="Register"
+                    x:Name="btnRegister"
+                    FontSize="20"
+                    Margin="0,30,0,0"
+                    BorderThickness="0"
+                    FontWeight="Medium"
+                    Foreground="#F0F0F0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#003151"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF032C46"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Height="32" CornerRadius="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
 
     </Grid>
