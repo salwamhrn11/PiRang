@@ -8,6 +8,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/LoginRegisterButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/DashboardButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
@@ -15,6 +16,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
                 <view:RegisterView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:BerandaViewModel}">
+                <view:BerandaView/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

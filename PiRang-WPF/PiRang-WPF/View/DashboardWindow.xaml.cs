@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiRang_WPF.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,43 @@ namespace PiRang_WPF.View
     /// </summary>
     public partial class DashboardWindow : Window
     {
+        private readonly INavigationService _navigationService;
+
         public DashboardWindow()
         {
             InitializeComponent();
+            BerandaView berandaView = new BerandaView();
+
+            // Set BerandaView as the content of the ContentControl
+            contentControl.Content = berandaView;
+        }
+
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+
+        }
+        private void berandaChecked(object sender, RoutedEventArgs e) 
+        {
+            BerandaView berandaView = new BerandaView();
+
+            // Set BerandaView as the content of the ContentControl
+            contentControl.Content = berandaView;
+        }
+
+        private void listPeminjamanChecked(object sender, RoutedEventArgs e)
+        {
+            ListPeminjamanView listPeminjamanView = new ListPeminjamanView();
+            contentControl.Content = listPeminjamanView;
+        }
+
+        private void peminjamanChecked(object sender, RoutedEventArgs e)
+        {
+            PeminjamanView peminjamanView = new PeminjamanView();
+            contentControl.Content = peminjamanView;
         }
     }
 }

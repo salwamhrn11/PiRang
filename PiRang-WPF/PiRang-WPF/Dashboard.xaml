@@ -130,7 +130,7 @@
                FontSize="38"
                Foreground="#E6D384"/>-->
 
-        <Image Source="Images/pirang.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="218" Margin="54,-5,0,0" VerticalAlignment="Top" Width="252"/>
+        <Image Source="Images/pirang.png" Stretch="Fill" HorizontalAlignment="Left"   VerticalAlignment="Top" Width="198" Height="59" Margin="79,70,0,0" />
 
 
         <TextBox Style="{StaticResource BuatDashboard}"
@@ -141,8 +141,7 @@
                    FontWeight="Bold"
                    Foreground="#003151"
                    VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Left"
-                   BorderBrush="Transparent"   
+                   HorizontalContentAlignment="Left" 
                   />
         <TextBox Style="{StaticResource Dashboard1}"
             HorizontalAlignment="Left" Margin="58,339,0,0" TextWrapping="Wrap" Text="   List Peminjaman" VerticalAlignment="Top"

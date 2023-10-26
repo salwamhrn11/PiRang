@@ -10,34 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PiRang_WPF
+namespace PiRang_WPF.View
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for ListPeminjamanView.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class ListPeminjamanView : UserControl
     {
-        public Dashboard()
+        public ListPeminjamanView()
         {
             InitializeComponent();
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
     }
 }

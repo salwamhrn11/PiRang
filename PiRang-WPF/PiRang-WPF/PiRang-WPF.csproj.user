@@ -11,10 +11,19 @@
     <Compile Update="PopUpBarang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\BerandaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\DashboardWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ListPeminjamanView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PeminjamanView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\RegisterView.xaml.cs">
@@ -37,13 +46,25 @@
     <Page Update="PopUpBarang.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\DashboardButtonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\LoginRegisterButtonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\BerandaView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DashboardWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ListPeminjamanView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PeminjamanView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\RegisterView.xaml">

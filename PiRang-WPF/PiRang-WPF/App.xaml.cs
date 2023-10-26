@@ -26,10 +26,17 @@ namespace PiRang_WPF
             {
                 DataContext = provider.GetRequiredService<StartViewModel>()
             });
+            services.AddSingleton<DashboardWindow>(provider => new DashboardWindow
+            {
+                DataContext = provider.GetRequiredService<DashboardViewModel>()
+            });
 
             services.AddSingleton<StartViewModel>();
             services.AddSingleton<LoginViewModel>();
             services.AddSingleton<RegisterViewModel>();
+            services.AddSingleton<DashboardViewModel>();
+            services.AddSingleton<BerandaViewModel>();
+            
             services.AddSingleton<INavigationService, NavigationService>();
 
             services.AddSingleton<Func<Type, Core.ViewModel>>

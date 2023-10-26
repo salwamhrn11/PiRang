@@ -5,352 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PiRang_WPF.View"
         mc:Ignorable="d"
-        Title="DashboardWindow" Height="1024" Width="1440">
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        FontFamily="Roboto"
+        WindowStartupLocation="CenterScreen"
+        Height="640" Width="900">
     
-    <Window.Resources>
-        <Style TargetType="TextBox" x:Key="RoundedTextBoxStyle">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Grid>
-                            <Rectangle Fill="#003151" Opacity="0.95" RadiusX="10" RadiusY="10"/>
-                            <Border CornerRadius="10">
-                                <ScrollViewer x:Name="PART_ContentHost"/>
-                            </Border>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="TextBox" x:Key="BuatDashboard">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Grid>
-                            <!-- Latar belakang dengan efek transparansi -->
-                            <Rectangle Fill="#E6D384"  RadiusX="15" RadiusY="15" Opacity="0.9"/>
-
-                            <!-- TextBox di atas latar belakang -->
-                            <Border CornerRadius="10">
-                                <ScrollViewer x:Name="PART_ContentHost"/>
-                            </Border>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="TextBox" x:Key="Dashboard1">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Border CornerRadius="10" Background="Transparent">
-                            <ScrollViewer x:Name="PART_ContentHost"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-    </Window.Resources>
+    
     <Grid>
-        <!-- <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="21"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="84"/>
+            <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        -->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+
         <Grid.Background>
             <ImageBrush ImageSource="/Images/background3.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <!--<Grid.Background>
-            <ImageBrush ImageSource="Images/background2.png" Stretch="UniformToFill"/>
-        </Grid.Background> -->
+        <Rectangle Grid.Column="0" MouseDown="StackPanel_MouseDown" Grid.ColumnSpan="5" Grid.Row="0"  Fill="Transparent"/>
 
-        <!--buat search-->
-        <!--buat search-->
-        <Rectangle Fill="#003151"
-            HorizontalAlignment="Left" 
-            Height="836" 
-            VerticalAlignment="Top" 
-            Opacity="0.95"
-            Width="1008" Margin="353,143,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
+        <!-- Nav Bar Stack Panel -->
+        <StackPanel Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#003151" Opacity="0.95"/>
+            </StackPanel.Background>
+            <Image Source="/Images/pirang.png" Margin="0,20,0,0" Width="140" />
 
+            <RadioButton Content="Beranda"
+                         Style="{StaticResource DasboardButtonTheme}"
+                         Margin="0,20,00,0"
+                         VerticalAlignment="Center"
+                         Width="150"
+                         VerticalContentAlignment="Center"
+                         FontSize="15"
+                         Command="{Binding NavigateToBerandaCommand}"
+                         Checked="berandaChecked"/>
+            <RadioButton Content="List Peminjaman"
+                         Style="{StaticResource DasboardButtonTheme}"
+                         Width="150"
+                         Margin="0,5,0,0"
+                         FontSize="15"
+                         Checked="listPeminjamanChecked"/>
+            <RadioButton Content="Peminjaman"
+                         Style="{StaticResource DasboardButtonTheme}"
+                         FontSize="15"
+                         Margin="0,5,0,0"
+                         Width="150"
+                         Checked="peminjamanChecked"/>
+        </StackPanel>
 
+        <!-- Search Bar Stack Panel -->
+        <StackPanel Grid.Row="1" Grid.Column="3">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#003151" Opacity="0.95"/>
+            </StackPanel.Background>
+        </StackPanel>
 
-        <Rectangle Fill="#E6D384"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="1"
-            Width="250" Margin="392,239,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-
-        <!--buat search-->
-        <TextBox Style="{StaticResource RoundedTextBoxStyle}"
-                   HorizontalAlignment="Left" Margin="352,45,0,0" TextWrapping="Wrap" Text="   Cari atau telusuri di sini!" VerticalAlignment="Top"
-                   Height="50"
-                   Width="1009"
-                   FontSize="24"
-                   FontWeight="Regular"
-                   Foreground="#F0F0F0"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Left"
-                   BorderBrush="Transparent" Grid.ColumnSpan="2"                    
-                  />
-        <Rectangle Fill="#003151"
-                   HorizontalAlignment="Left" 
-                   Height="934" 
-                   VerticalAlignment="Center" 
-                   Opacity="0.95"
-                   Width="281" Margin="39,0,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <!--buat bagian menu-->
-        <!-- <Label Content="PiRang" 
-               HorizontalAlignment="Left" 
-               Height="55" 
-               Margin="106,69,0,0" 
-               VerticalAlignment="Top" 
-               Width="136"
-               FontWeight="Bold"
-               FontSize="38"
-               Foreground="#E6D384"/>-->
-
-        <Image Source="/Images/pirang.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="218" Margin="54,-5,0,0" VerticalAlignment="Top" Width="252"/>
-
-
-        <TextBox Style="{StaticResource BuatDashboard}"
-                   HorizontalAlignment="Left" Margin="58,279,0,0" TextWrapping="Wrap" Text="   Beranda" VerticalAlignment="Top"
-                   Height="48"
-                   Width="242"
-                   FontSize="22"
-                   FontWeight="Bold"
-                   Foreground="#003151"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Left"
-                   BorderBrush="Transparent"   
-                  />
-        <TextBox Style="{StaticResource Dashboard1}"
-            HorizontalAlignment="Left" Margin="58,339,0,0" TextWrapping="Wrap" Text="   List Peminjaman" VerticalAlignment="Top"
-            Height="48"
-            Width="242"
-            FontSize="22"
-            FontWeight="Medium"
-            Foreground="#FFFFFF"
-            VerticalContentAlignment="Center"
-            HorizontalContentAlignment="Left"
-            BorderBrush="Transparent" 
-            Background="Transparent" />
-        <TextBox Style="{StaticResource Dashboard1}"
-            HorizontalAlignment="Left" Margin="58,399,0,0" TextWrapping="Wrap" Text="   Peminjaman" VerticalAlignment="Top"
-            Height="48"
-            Width="240"
-            FontSize="22"
-            FontWeight="Medium"
-            Foreground="#FFFFFF"
-            VerticalContentAlignment="Center"
-            HorizontalContentAlignment="Left"
-            BorderBrush="Transparent"   
-            Background="Transparent"
-            />
-
-        <Label Content="MENU" 
-               HorizontalAlignment="Left" 
-               Height="35" 
-               Margin="58,229,0,0" 
-               VerticalAlignment="Top" 
-               Width="78"
-               FontWeight="Regular"
-               FontSize="24"
-               Foreground="#E6D384"/>
-
-        <!--buat display barang-->
-        <Label Content="Display Barang" 
-            HorizontalAlignment="Left" 
-            Height="56" 
-            Margin="392,163,0,0" 
-            VerticalAlignment="Top" 
-            Width="280"
-            FontWeight="SemiBold"
-            FontSize="38"
-            Foreground="#F0F0F0"/>
-        <Image Source="/Images/kipas.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="414,264,0,0" VerticalAlignment="Top" Width="200"/>
-        <Rectangle Fill="#E6D384"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="1"
-            Width="250" Margin="714,239,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Image Source="/Images/kursi tamu.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="736,264,0,0" VerticalAlignment="Top" Width="200"/>
-        <Rectangle Fill="#E6D384"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="1"
-            Width="250" Margin="1039,239,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Image Source="/Images/meja acara.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="1061,264,0,0" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Nama Barang : Kipas" 
-               HorizontalAlignment="Left" 
-               Height="36" 
-               Margin="392,502,0,0" 
-               VerticalAlignment="Top" 
-               Width="250"
-               FontWeight="Medium"
-               FontSize="18"
-               Foreground="#F0F0F0"/>
-        <Label Content="Tersedia : 2" 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="392,540,0,0" 
-            VerticalAlignment="Top" 
-            Width="161"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Nama Barang : Kursi " 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="714,502,0,0" 
-            VerticalAlignment="Top" 
-            Width="242"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Tersedia : 200 " 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="714,540,0,0" 
-            VerticalAlignment="Top" 
-            Width="160"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Nama Barang : Meja " 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="1039,502,0,0" 
-            VerticalAlignment="Top" 
-            Width="250"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Tersedia : 10 " 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="1039,540,0,0" 
-            VerticalAlignment="Top" 
-            Width="160"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Rectangle Fill="#E6D384"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="1"
-            Width="250" Margin="392,606,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Image Source="/Images/microphone dan sound system.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="414,631,0,0" VerticalAlignment="Top" Width="200"/>
-        <Rectangle Fill="#E6D384"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="1"
-            Width="250" Margin="714,606,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Image Source="/Images/panggung.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="736,631,0,0" VerticalAlignment="Top" Width="200"/>
-        <Rectangle Fill="#E6D384"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="1"
-            Width="250" Margin="1039,606,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>
-        <Image Source="/Images/tenda acara besar.jpg" Stretch="UniformToFill" HorizontalAlignment="Left" Height="200" Margin="1061,631,0,0" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Nama Barang : Microphone + &#xD;&#xA;sound system " 
-            HorizontalAlignment="Left" 
-            Height="56" 
-            Margin="392,869,0,0" 
-            VerticalAlignment="Top" 
-            Width="250"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Tersedia : 4" 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="392,920,0,0" 
-            VerticalAlignment="Top" 
-            Width="161"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Nama Barang : Panggung " 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="714,869,0,0" 
-            VerticalAlignment="Top" 
-            Width="250"
-            FontWeight="Medium" 
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Tersedia : 2" 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="714,907,0,0" 
-            VerticalAlignment="Top" 
-            Width="160"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Nama Barang : Tenda Acara" 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="1039,869,0,0" 
-            VerticalAlignment="Top" 
-            Width="250"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-        <Label Content="Tersedia : 4" 
-            HorizontalAlignment="Left" 
-            Height="36" 
-            Margin="1039,907,0,0" 
-            VerticalAlignment="Top" 
-            Width="160"
-            FontWeight="Medium"
-            FontSize="18"
-            Foreground="#F0F0F0"/>
-
-
-        <!--<Rectangle Fill="#4E709D"
-            HorizontalAlignment="Left" 
-            Height="250" 
-            VerticalAlignment="Top" 
-            Opacity="0.6"
-            Width="250" Margin="392,239,0,0">
-            <Rectangle.RadiusX>15</Rectangle.RadiusX>
-            <Rectangle.RadiusY>15</Rectangle.RadiusY>
-        </Rectangle>-->
+        <!-- User Control Stack Panel width = 654 ; height = 533 -->
+        <StackPanel Grid.Column="3" Grid.Row="3">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#003151"/>
+            </StackPanel.Background>
+        </StackPanel>
+        <ContentControl Name="contentControl" Grid.Column="3" Grid.Row="3"/>
     </Grid>
 </Window>
