@@ -45,7 +45,8 @@ public partial class LoginView : UserControl
                 adminDashboardWindow.Show();
 
                 startWindow.Close();
-            } else
+            } 
+            else
             {
                 NpgsqlWrapper wrapper = new NpgsqlWrapper();
                 bool logon = wrapper.login(txtEmail.Text, txtPassword.Text);
