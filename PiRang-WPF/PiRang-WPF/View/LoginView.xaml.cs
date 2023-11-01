@@ -1,4 +1,6 @@
-﻿using PiRang_WPF.Services;
+﻿using Npgsql;
+using PiRang_WPF.DBComm;
+using PiRang_WPF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,10 +39,29 @@ public partial class LoginView : UserControl
     {
         if (Application.Current.MainWindow is StartWindow startWindow)
         {
-            DashboardWindow dashboardWindow = new DashboardWindow();
-            dashboardWindow.Show();
+            if (txtEmail.Text == "admin@admin.com" && txtPassword.Text == "admin")
+            {
+                AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow(txtEmail.Text);
+                adminDashboardWindow.Show();
 
-            startWindow.Close();
+                startWindow.Close();
+            } else
+            {
+                NpgsqlWrapper wrapper = new NpgsqlWrapper();
+                bool logon = wrapper.login(txtEmail.Text, txtPassword.Text);
+                if (logon)
+                {
+                    MessageBox.Show("Login Berhasil", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    DashboardWindow dashboardWindow = new DashboardWindow();
+                    dashboardWindow.Show();
+
+                    startWindow.Close();
+                } else
+                {
+                    MessageBox.Show("Pastikan Email dan Password Sudah Benar", "Fail", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
         }
     }
 }

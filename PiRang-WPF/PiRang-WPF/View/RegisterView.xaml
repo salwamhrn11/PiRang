@@ -96,7 +96,8 @@
                     Margin="0,30,0,0"
                     BorderThickness="0"
                     FontWeight="Medium"
-                    Foreground="#F0F0F0">
+                    Foreground="#F0F0F0"
+                    Click="btnRegister_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#003151"/>
