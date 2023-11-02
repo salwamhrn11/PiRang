@@ -1,0 +1,67 @@
+﻿
+public class Warga
+{
+    public string Email { get; set; }
+    public string NomorHp { get; set; }
+    public string Password { get; set; }
+}
+
+public class Barang
+{
+    public int Id { get; set; }
+    public string NamaBarang { get; set; }
+    public int Jumlah { get; set; }
+}
+
+private List<Warga> ConvertDataTableToList(DataTable dataTable)
+    {
+        List<Warga> wargaList = new List<Warga>();
+        foreach (DataRow row in dataTable.Rows)
+        {
+            Warga warga = new Warga
+            {
+                Email = row["email"].ToString(),
+                NomorHp = row["no_hp"].ToString(),
+                Password = row["password"].ToString()
+            };
+            wargaList.Add(warga);
+        }
+        return wargaList;
+    }
+
+    private List<Barang> ConvertDataTableToList(DataTable dataTable)
+    {
+        List<Barang> barangList = new List<Barang>();
+        foreach (DataRow row in dataTable.Rows)
+        {
+            Barang barang = new Barang
+            {
+                Id = row["id"].ToString(),
+                NamaBarang = row["nama_barang"].ToString(),
+                Jumlah = row["jumlah"].ToString()
+            };
+            barangList.Add(barang);
+        }
+        return barangList;
+    }
+
+        NpgsqlWrapper wrapper = new NpgsqlWrapper();
+        wrapper.load();
+        wrapper.connect();
+        try
+        {
+            DataTable dataTable = new DataTable();
+
+            string sql = @"select * from warga";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, wrapper.connection);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            dataTable.Load(reader);
+
+            List<Warga> wargaList = ConvertDataTableToList(dataTable);
+
+            dgBarang.ItemsSource = wargaList;
+        }
+        catch (Exception ex)
+        {
+
+        }

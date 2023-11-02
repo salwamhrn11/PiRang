@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Npgsql;
+using PiRang_WPF.DBComm;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,16 +17,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PiRang_WPF.View
+namespace PiRang_WPF.View;
+
+/// <summary>
+/// Interaction logic for BerandaView.xaml
+/// </summary>
+public partial class BerandaView : UserControl
 {
-    /// <summary>
-    /// Interaction logic for BerandaView.xaml
-    /// </summary>
-    public partial class BerandaView : UserControl
+    public BerandaView()
     {
-        public BerandaView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
