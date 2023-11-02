@@ -30,7 +30,6 @@ namespace PiRang_WPF.View
         {
             InitializeComponent();
             _email = email;
-            txtTest.Text = _email;
         }
 
     }

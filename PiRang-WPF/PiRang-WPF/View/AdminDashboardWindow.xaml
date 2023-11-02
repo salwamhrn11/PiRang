@@ -51,7 +51,6 @@
                          Width="150"
                          />
         </StackPanel>
-
-        <TextBox Name="txtTest" Grid.Column="1" Text="TEST"/>
+        
     </Grid>
 </Window>
