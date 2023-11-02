@@ -139,8 +139,8 @@
                     </StackPanel>
                 </StackPanel>
             </StackPanel>-->
-            <DataGrid x:Name="dgBarang"/>
+            <DataGrid x:Name="dgBarang" AutoGenerateColumns="True"/>
+
         </ScrollViewer>
-        
     </Grid>
 </UserControl>

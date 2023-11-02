@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace PiRang_WPF.DBComm;
 
-public class NpgsqlWrapper
+public partial class NpgsqlWrapper
 {
     public NpgsqlConnection connection;
     public string connString = "Host=tiny.db.elephantsql.com;Username=zyaidsdp;Password=yIDhjrN8B1jqQkE_SkNl-C3k4_Z1nn8c;Database=zyaidsdp";

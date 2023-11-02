@@ -54,7 +54,7 @@ public partial class LoginView : UserControl
                 {
                     MessageBox.Show("Login Berhasil", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    DashboardWindow dashboardWindow = new DashboardWindow();
+                    DashboardWindow dashboardWindow = new DashboardWindow(txtEmail.Text);
                     dashboardWindow.Show();
 
                     startWindow.Close();

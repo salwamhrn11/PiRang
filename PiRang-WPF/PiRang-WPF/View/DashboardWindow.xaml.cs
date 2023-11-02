@@ -20,12 +20,13 @@ namespace PiRang_WPF.View
     /// </summary>
     public partial class DashboardWindow : Window
     {
-        private readonly INavigationService _navigationService;
+        private string _email;
 
-        public DashboardWindow()
+        public DashboardWindow(string email)
         {
             InitializeComponent();
-            BerandaView berandaView = new BerandaView();
+            _email = email;
+            BerandaView berandaView = new BerandaView(_email);
 
             // Set BerandaView as the content of the ContentControl
             contentControl.Content = berandaView;
@@ -41,7 +42,7 @@ namespace PiRang_WPF.View
         }
         private void berandaChecked(object sender, RoutedEventArgs e) 
         {
-            BerandaView berandaView = new BerandaView();
+            BerandaView berandaView = new BerandaView(_email);
 
             // Set BerandaView as the content of the ContentControl
             contentControl.Content = berandaView;
@@ -49,13 +50,13 @@ namespace PiRang_WPF.View
 
         private void listPeminjamanChecked(object sender, RoutedEventArgs e)
         {
-            ListPeminjamanView listPeminjamanView = new ListPeminjamanView();
+            ListPeminjamanView listPeminjamanView = new ListPeminjamanView(_email);
             contentControl.Content = listPeminjamanView;
         }
 
         private void peminjamanChecked(object sender, RoutedEventArgs e)
         {
-            PeminjamanView peminjamanView = new PeminjamanView();
+            PeminjamanView peminjamanView = new PeminjamanView(_email);
             contentControl.Content = peminjamanView;
         }
     }

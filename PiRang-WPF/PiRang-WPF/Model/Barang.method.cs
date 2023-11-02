@@ -1,30 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
-using Microsoft.EntityFrameworkCore;
+namespace PiRang_WPF.Model;
 
-namespace PiRang_WPF.Model
+class BarangMethod
 {
-    partial class AppDBContext : DbContext
+    public static List<Barang> ConvertDataTableToList(DataTable dataTable)
     {
-        // GET METHODS (Retrieving Data)
-        public List<Barang> GetAllBarangs()
+        List<Barang> barangList = new List<Barang>();
+        foreach (DataRow row in dataTable.Rows)
         {
-            return Barangs.ToList();
+            Barang barang = new Barang
+            {
+                Id = Convert.ToInt32(row["id"]),
+                NamaBarang = row["nama_barang"].ToString(),
+                Jumlah = Convert.ToInt32(row["jumlah"])
+            };
+            barangList.Add(barang);
         }
-        public Barang GetBarangById(int id)
-        {
-            return Barangs.FirstOrDefault(e => e.Id == id);
-        }
-
-        // POST METHODS (Add data to table)
-        public void AddBarang(Barang barang)
-        {
-            Barangs.Add(barang);
-            SaveChanges();
-        }
+        return barangList;
     }
 }

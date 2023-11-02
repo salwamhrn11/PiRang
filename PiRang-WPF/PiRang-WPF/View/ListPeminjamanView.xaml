@@ -29,7 +29,7 @@
 
         <ScrollViewer Grid.Row="2" 
                     Grid.Column="1">
-            <StackPanel>
+            <!--<StackPanel>
                 <StackPanel Orientation="Horizontal">
 
                     <StackPanel VerticalAlignment="Top"
@@ -69,7 +69,8 @@
                                Foreground="White"/>
                     </StackPanel>
                 </StackPanel>
-            </StackPanel>
+            </StackPanel>-->
+            <DataGrid x:Name="dgListPeminjaman" AutoGenerateColumns="True"/>
         </ScrollViewer>
 
     </Grid>

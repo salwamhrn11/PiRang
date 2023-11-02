@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using PiRang_WPF.DBComm;
+using PiRang_WPF.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,8 +25,22 @@ namespace PiRang_WPF.View;
 /// </summary>
 public partial class BerandaView : UserControl
 {
-    public BerandaView()
+    private string _email;
+    public BerandaView(string email)
     {
         InitializeComponent();
+
+        _email = email;
+        NpgsqlWrapper wrapper = new NpgsqlWrapper();
+        wrapper.load();
+        wrapper.connect();
+
+        DataTable dt = wrapper.GetAllBarang();
+        if (dt.Rows.Count > 0 )
+        {
+            List<Barang> barangs = BarangMethod.ConvertDataTableToList(dt);
+            dgBarang.ItemsSource = barangs;
+        }
+        wrapper.disconnect();
     }
 }

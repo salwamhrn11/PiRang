@@ -1,5 +1,8 @@
-﻿using System;
+﻿using PiRang_WPF.DBComm;
+using PiRang_WPF.Model;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,23 @@ namespace PiRang_WPF.View
     /// </summary>
     public partial class ListPeminjamanView : UserControl
     {
-        public ListPeminjamanView()
+        private string _email;
+        public ListPeminjamanView(string email)
         {
             InitializeComponent();
+            _email = email;
+
+            NpgsqlWrapper wrapper = new NpgsqlWrapper();
+            wrapper.load();
+            wrapper.connect();
+
+            DataTable dt = wrapper.GetPeminjamanBarangByEmail(_email);
+            if (dt.Rows.Count > 0)
+            {
+                List<PeminjamanBarang> peminjamanBarangs = PeminjamanBarangMethod.ConvertDataTableToList(dt);
+                dgListPeminjaman.ItemsSource = peminjamanBarangs;
+            }
+            wrapper.disconnect();
         }
     }
 }
