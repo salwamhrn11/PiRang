@@ -19,26 +19,26 @@ using System.Windows.Shapes;
 namespace PiRang_WPF.View
 {
     /// <summary>
-    /// Interaction logic for AdminPeminjamanBarangView.xaml
+    /// Interaction logic for AdminListUser.xaml
     /// </summary>
-    public partial class AdminPeminjamanBarangView : UserControl
+    public partial class AdminListUser : UserControl
     {
-        public AdminPeminjamanBarangView()
+        public AdminListUser()
         {
-            InitializeComponent();
-
             InitializeComponent();
             NpgsqlWrapper wrapper = new NpgsqlWrapper();
             wrapper.load();
             wrapper.connect();
-
-            DataTable dt = wrapper.GetAllPeminjamanBarang();
-            if (dt.Rows.Count > 0)
-            {
-                List<PeminjamanBarang> barangs = PeminjamanBarangMethod.ConvertDataTableToList(dt);
-                dgPeminjamanBarang.ItemsSource = barangs;
-            }
+            dgUsers.ItemsSource = wrapper.GetAllWarga();
             wrapper.disconnect();
+        }
+
+        private void btnAddClick(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnEditClick(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

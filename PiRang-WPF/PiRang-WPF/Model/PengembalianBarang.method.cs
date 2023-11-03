@@ -14,10 +14,10 @@ public class PengembalianBarangMethod
         {
             PengembalianBarang pengembalianBarang = new PengembalianBarang
             {
-                PeminjamanBarangId = Convert.ToInt32(row["peminjaman_barang_id"]),
                 BarangId = Convert.ToInt32(row["barang_id"]),
                 WargaEmail = row["warga_email"].ToString(),
-                Jumlah = Convert.ToInt32(row["jumlah"]),
+                JumlahKembali = Convert.ToInt32(row["jumlah_kembali"]),
+                JumlahDipinjam = Convert.ToInt32(row["jumlah_dipinjam"]),
                 KondisiBarang = row["kondisi_barang"].ToString()
             };
             pengembalianBarangList.Add(pengembalianBarang);

@@ -43,18 +43,21 @@
                          Width="150"
                          Margin="0,5,0,0"
                          FontSize="15"
+                         Checked="rbtnBarangDipinjam_Checked"
                          />
             <RadioButton Content="Pengembalian Barang"
                          Style="{StaticResource DasboardButtonTheme}"
                          FontSize="15"
                          Margin="0,5,0,0"
                          Width="150"
+                         Checked="rbtnPengembalian_Checked"
                          />
             <RadioButton Content="List Users"
                          Style="{StaticResource DasboardButtonTheme}"
                          FontSize="15"
                          Margin="0,5,0,0"
                          Width="150"
+                         Checked="rbtnListUsers_Checked"
                          />
         </StackPanel>
 

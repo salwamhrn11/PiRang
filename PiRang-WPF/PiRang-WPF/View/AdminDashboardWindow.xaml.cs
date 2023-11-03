@@ -35,8 +35,25 @@ namespace PiRang_WPF.View
         {
             AdminBarangView adminBarangView = new AdminBarangView();
 
-            // Set BerandaView as the content of the ContentControl
             ctnControl.Content = adminBarangView;
+        }
+
+        private void rbtnBarangDipinjam_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminPeminjamanBarangView adminPeminjamanBarang = new AdminPeminjamanBarangView();
+
+            ctnControl.Content = adminPeminjamanBarang;
+        }
+        private void rbtnListUsers_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminListUser adminListUser = new AdminListUser();
+            ctnControl.Content = adminListUser;
+        }
+        
+        private void rbtnPengembalian_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminPengembalianBarang adminPengembalian = new AdminPengembalianBarang();
+            ctnControl.Content = adminPengembalian;
         }
     }
 }

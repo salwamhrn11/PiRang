@@ -17,7 +17,13 @@
     <Compile Update="View\AdminDashboardWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AdminListUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AdminPeminjamanBarangView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminPengembalianBarang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\BerandaView.xaml.cs">
@@ -67,7 +73,13 @@
     <Page Update="View\AdminDashboardWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AdminListUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AdminPeminjamanBarangView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminPengembalianBarang.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\BerandaView.xaml">
