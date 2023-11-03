@@ -22,15 +22,21 @@ namespace PiRang_WPF.View
     {
         private string _email;
 
-        public AdminDashboardWindow()
-        {
-            InitializeComponent();
-        }
         public AdminDashboardWindow(string email)
         {
             InitializeComponent();
             _email = email;
+
+            AdminBarangView adminBarangView = new AdminBarangView();
+            ctnControl.Content = adminBarangView;
         }
 
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminBarangView adminBarangView = new AdminBarangView();
+
+            // Set BerandaView as the content of the ContentControl
+            ctnControl.Content = adminBarangView;
+        }
     }
 }

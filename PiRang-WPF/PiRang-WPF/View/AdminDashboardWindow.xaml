@@ -37,12 +37,18 @@
                          VerticalContentAlignment="Center"
                          FontSize="15"
                          Command="{Binding NavigateToBerandaCommand}"
-                         />
+                         Checked="RadioButton_Checked"/>
             <RadioButton Content="Barang Dipinjam"
                          Style="{StaticResource DasboardButtonTheme}"
                          Width="150"
                          Margin="0,5,0,0"
                          FontSize="15"
+                         />
+            <RadioButton Content="Pengembalian Barang"
+                         Style="{StaticResource DasboardButtonTheme}"
+                         FontSize="15"
+                         Margin="0,5,0,0"
+                         Width="150"
                          />
             <RadioButton Content="List Users"
                          Style="{StaticResource DasboardButtonTheme}"
@@ -51,6 +57,7 @@
                          Width="150"
                          />
         </StackPanel>
-        
+
+        <ContentControl Name="ctnControl" Grid.Column="1"/>
     </Grid>
 </Window>

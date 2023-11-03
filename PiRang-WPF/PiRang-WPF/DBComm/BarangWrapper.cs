@@ -63,4 +63,52 @@ public partial class NpgsqlWrapper
             return barang;
         }
     }
+
+    public bool AddBarang(int id, string nama_barang, int jumlah)
+    {
+        try
+        {
+            string sql = @"select * from barang_insert(:_id,:_nama_barang,:_jumlah)";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("_id", id);
+            cmd.Parameters.AddWithValue("_nama_barang", nama_barang);
+            cmd.Parameters.AddWithValue("_jumlah", jumlah);
+
+            if ((int)cmd.ExecuteScalar() == 0)
+            {
+                MessageBox.Show("Terjadi error dalam add barang", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error: ." + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            return false;
+        }
+    }
+
+    public bool EditBarang(int id, string nama_barang, int jumlah)
+    {
+        try
+        {
+            string sql = @"select * from barang_update(:_id,:_nama_barang,:_jumlah)";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("_id", id);
+            cmd.Parameters.AddWithValue("_nama_barang", nama_barang);
+            cmd.Parameters.AddWithValue("_jumlah", jumlah);
+
+            if ((int)cmd.ExecuteScalar() == 0)
+            {
+                MessageBox.Show("Terjadi error dalam edit barang", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error: ." + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            return false;
+        }
+    }
 }

@@ -9,6 +9,24 @@ namespace PiRang_WPF.DBComm;
 
 public partial class NpgsqlWrapper
 {
+    public DataTable GetAllPeminjamanBarang()
+    {
+        DataTable dataTable = new DataTable();
+        try
+        {
+            string sql = @"SELECT pb.id, pb.barang_id, b.nama_barang, pb.warga_email, pb.jumlah, pb.durasi_peminjaman FROM peminjaman_barang AS pb INNER JOIN barang AS b ON pb.barang_id = b.id";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            dataTable.Load(reader);
+
+            return dataTable;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("error: " + ex.Message, "Error Occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            return dataTable;
+        }
+    }
     public DataTable GetPeminjamanBarangByEmail(string email)
     {
         DataTable dataTable = new DataTable();
