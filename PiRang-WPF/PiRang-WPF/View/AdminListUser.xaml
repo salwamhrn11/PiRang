@@ -17,10 +17,16 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBox Name="txtEmail" Width="145" Text="email"/>
-            <TextBox Name="txtNoHp" Width="145" Text="Nomor Hp" Margin="10,0,0,0"/>
+            <TextBox Name="txtNoHp" Width="145" Text="Nomor Hp" Margin="10,0,0,0"
+                     PreviewTextInput="TextBox_NumberOnly"/>
             <TextBox Name="txtPassword" Width="145" Text="Password" Margin="10,0,0,0"/>
 
-            <Button Content="add" Margin="20,0,0,0" Width="100" FontWeight="Bold" Click="btnAddClick"/>
+            <Button 
+                Content="add" 
+                Margin="20,0,0,0" 
+                Width="100" 
+                FontWeight="Bold" 
+                Click="btnAddClick"/>
             <Button Content="edit" Margin="10,0,0,0" Width="100" FontWeight="Bold" Click="btnEditClick"/>
         </StackPanel>
     </Grid>
