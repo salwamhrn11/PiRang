@@ -16,7 +16,7 @@
         <DataGrid Name="dgUsers" Grid.Row="0" AutoGenerateColumns="True"/>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <TextBox Name="txtEmail" Width="145" Text="email"/>
+            <TextBox Name="txtEmail" Width="100" Text="email"/>
             <TextBox Name="txtNoHp" Width="145" Text="Nomor Hp" Margin="10,0,0,0"
                      PreviewTextInput="TextBox_NumberOnly"/>
             <TextBox Name="txtPassword" Width="145" Text="Password" Margin="10,0,0,0"/>

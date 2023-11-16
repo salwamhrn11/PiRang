@@ -39,7 +39,7 @@ public partial class LoginView : UserControl
     {
         if (Application.Current.MainWindow is StartWindow startWindow)
         {
-            if (txtEmail.Text == "admin@admin.com" && txtPassword.Text == "admin")
+            if (txtEmail.Text == "admin@admin.com" && txtPassword.Password == "admin")
             {
                 AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow(txtEmail.Text);
                 adminDashboardWindow.Show();
@@ -49,7 +49,7 @@ public partial class LoginView : UserControl
             else
             {
                 NpgsqlWrapper wrapper = new NpgsqlWrapper();
-                bool logon = wrapper.login(txtEmail.Text, txtPassword.Text);
+                bool logon = wrapper.login(txtEmail.Text, txtPassword.Password);
                 if (logon)
                 {
                     MessageBox.Show("Login Berhasil", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

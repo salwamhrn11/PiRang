@@ -86,4 +86,39 @@ public partial class NpgsqlWrapper
             return false;
         }
     }
+
+    public PeminjamanBarang GetPeminjamanBarangById(int id)
+    {
+        DataTable dataTable = new DataTable();
+        try
+        {
+            string sql = @"SELECT pb.id, pb.barang_id, b.nama_barang, pb.warga_email, pb.jumlah, pb.durasi_peminjaman FROM peminjaman_barang AS pb INNER JOIN barang AS b ON pb.barang_id = b.id where pb.id = :_id";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("_id", id);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            dataTable.Load(reader);
+            foreach (DataRow row in dataTable.Rows)
+            {
+                PeminjamanBarang peminjamanBarang = new PeminjamanBarang
+                {
+                    Id = Convert.ToInt32(row["id"]),
+                    BarangId = Convert.ToInt32(row["barang_id"]),
+                    NamaBarang = row["nama_barang"].ToString(),
+                    WargaEmail = row["warga_email"].ToString(),
+                    DurasiPeminjaman = Convert.ToInt32(row["durasi_peminjaman"]),
+                    Jumlah = Convert.ToInt32(row["jumlah"])
+                };
+                return peminjamanBarang;
+            }
+            return new PeminjamanBarang
+            {
+                Id = 0
+            };
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("error: " + ex.Message, "Error Occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            return new PeminjamanBarang();
+        }
+    }
 }

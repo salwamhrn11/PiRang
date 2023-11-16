@@ -31,20 +31,20 @@ namespace PiRang_WPF.View
             ctnControl.Content = adminBarangView;
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void rbtnKelolaBarang_Checked(object sender, RoutedEventArgs e)
         {
             AdminBarangView adminBarangView = new AdminBarangView();
 
             ctnControl.Content = adminBarangView;
         }
 
-        private void rbtnBarangDipinjam_Checked(object sender, RoutedEventArgs e)
+        private void rbtnListPeminjaman_Checked(object sender, RoutedEventArgs e)
         {
             AdminPeminjamanBarangView adminPeminjamanBarang = new AdminPeminjamanBarangView();
 
             ctnControl.Content = adminPeminjamanBarang;
         }
-        private void rbtnListUsers_Checked(object sender, RoutedEventArgs e)
+        private void rbtnListWarga_Checked(object sender, RoutedEventArgs e)
         {
             AdminListUser adminListUser = new AdminListUser();
             ctnControl.Content = adminListUser;

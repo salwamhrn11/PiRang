@@ -33,6 +33,21 @@ public partial class AdminPengembalianBarang : UserControl
     }
     private void btnAddClick(object sender, RoutedEventArgs e)
     {
+        NpgsqlWrapper wrapper = new NpgsqlWrapper();
+        wrapper.load();
+        wrapper.connect();
+
+        bool add_pengembalian = wrapper.AddPengembalianBarang(Convert.ToInt32(txtPeminjamanId.Text),  Convert.ToInt32(txtJumlahKembali.Text), txtKondisi.Text);
+        if (add_pengembalian)
+        {
+            MessageBox.Show("Berhasil menambah pengembalian barang", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        } else
+        {
+            MessageBox.Show("Gagal menambah pengembalian barang", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        dgPengembalianBarang.ItemsSource = wrapper.GetAllPengembalianBarang();
+        wrapper.disconnect();
     }
 
 }

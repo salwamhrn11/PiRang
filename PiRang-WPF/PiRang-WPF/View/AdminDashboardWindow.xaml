@@ -16,6 +16,7 @@
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="21"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="29"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -30,7 +31,7 @@
             <ImageBrush ImageSource="/Images/background3.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <Rectangle Grid.Column="0" MouseDown="StackPanel_MouseDown" Grid.ColumnSpan="5" Grid.Row="0"  Fill="Transparent"/>
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0"  Fill="Transparent"/>
 
         <!--buat navbar-->
         <StackPanel Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
@@ -47,12 +48,22 @@
                          VerticalContentAlignment="Center"
                          FontSize="15"
                          Command="{Binding NavigateToBerandaCommand}"
-                         Checked="berandaChecked" Grid.Column="1" Grid.Row="3"/>
+                         Checked="rbtnKelolaBarang_Checked" Grid.Column="1" Grid.Row="3"/>
             <RadioButton Content="List Peminjaman"
                          Style="{StaticResource DasboardButtonTheme}"
                          Width="150"
                          FontSize="15"
-                         Checked="listPeminjamanChecked"/>
+                         Checked="rbtnListPeminjaman_Checked"/>
+            <RadioButton Content="Kelola Pengembalian"
+                         Style="{StaticResource DasboardButtonTheme}"
+                         Width="150"
+                         FontSize="15"
+                         Checked="rbtnPengembalian_Checked"/>
+            <RadioButton Content="Kelola Warga"
+                         Style="{StaticResource DasboardButtonTheme}"
+                         Width="150"
+                         FontSize="15"
+                         Checked="rbtnListWarga_Checked"/>
         </StackPanel>
 
         <!--buat search barangnya-->
@@ -70,7 +81,7 @@
                 <SolidColorBrush Color="#003151"/>
             </StackPanel.Background>
         </StackPanel>
-        <ContentControl Name="contentControl" Grid.Column="3" Grid.Row="3"/>
+        <ContentControl Name="ctnControl" Grid.Column="3" Grid.Row="3"/>
         
 
         <!--<StackPanel Grid.Row="1" Grid.Column="3">
