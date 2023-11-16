@@ -22,7 +22,7 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1"
                    Text="Display Barang"
-                   Foreground="White"
+                   Foreground="#F0F0F0"
                    FontSize="20"/>
 
         <ScrollViewer Grid.Row="2" 
