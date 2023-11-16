@@ -12,55 +12,119 @@
         Height="640" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="21"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/background3.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Rectangle Grid.Column="0" MouseDown="StackPanel_MouseDown" Grid.ColumnSpan="5" Grid.Row="0"  Fill="Transparent"/>
+
+        <!--buat navbar-->
+        <StackPanel Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
             <StackPanel.Background>
                 <SolidColorBrush Color="#003151" Opacity="0.95"/>
             </StackPanel.Background>
-            <TextBlock 
-                Text="ADMIN DASHBOARD"
-                Foreground="#fff"
-                FontSize="30"
-                TextWrapping="Wrap"
-                TextAlignment="Left"
-                FontWeight="DemiBold"
-                Margin="10,10,0,0"/>
+            <Image Source="/Images/pirang.png" Margin="0,20,0,0" Width="140" />
 
-            <RadioButton Content="Barang Tersedia"
+            <RadioButton Content="Kelola Barang"
                          Style="{StaticResource DasboardButtonTheme}"
-                         Margin="0,20,00,0"
-                         VerticalAlignment="Center"
+                         Margin="10,52,15,0"
+                         VerticalAlignment="Top"
                          Width="150"
                          VerticalContentAlignment="Center"
                          FontSize="15"
                          Command="{Binding NavigateToBerandaCommand}"
-                         Checked="RadioButton_Checked"/>
-            <RadioButton Content="Barang Dipinjam"
+                         Checked="berandaChecked" Grid.Column="1" Grid.Row="3"/>
+            <RadioButton Content="List Peminjaman"
                          Style="{StaticResource DasboardButtonTheme}"
                          Width="150"
-                         Margin="0,5,0,0"
                          FontSize="15"
-                         Checked="rbtnBarangDipinjam_Checked"
-                         />
-            <RadioButton Content="Pengembalian Barang"
-                         Style="{StaticResource DasboardButtonTheme}"
-                         FontSize="15"
-                         Margin="0,5,0,0"
-                         Width="150"
-                         Checked="rbtnPengembalian_Checked"
-                         />
-            <RadioButton Content="List Users"
-                         Style="{StaticResource DasboardButtonTheme}"
-                         FontSize="15"
-                         Margin="0,5,0,0"
-                         Width="150"
-                         Checked="rbtnListUsers_Checked"
-                         />
+                         Checked="listPeminjamanChecked"/>
         </StackPanel>
 
-        <ContentControl Name="ctnControl" Grid.Column="1"/>
+        <!--buat search barangnya-->
+        <Border Grid.Row="1" Grid.Column="3" Background="#003151" Opacity="0.95" CornerRadius="10" Width="650" HorizontalAlignment="Left">
+            <StackPanel Width="630">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="#003151" Opacity="0.95"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Border>
+        
+        <!--grid kolom-->
+        <StackPanel Grid.Column="3" Grid.Row="3" Width="650" HorizontalAlignment="Left">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#003151"/>
+            </StackPanel.Background>
+        </StackPanel>
+        <ContentControl Name="contentControl" Grid.Column="3" Grid.Row="3"/>
+        
+
+        <!--<StackPanel Grid.Row="1" Grid.Column="3">
+            <StackPanel.Background CornerRounded="10">
+                <SolidColorBrush Color="#003151" Opacity="0.95"/>
+            </StackPanel.Background>
+        </StackPanel>-->
+
+
+        <!--StackPanel Grid.Column="0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#003151" Opacity="0.95"/>
+            </StackPanel.Background>
+            <TextBlock 
+         Text="ADMIN DASHBOARD"
+         Foreground="#fff"
+         FontSize="30"
+         TextWrapping="Wrap"
+         TextAlignment="Left"
+         FontWeight="DemiBold"
+         Margin="10,10,0,0"/>
+
+            <RadioButton Content="Barang Tersedia"
+                  Style="{StaticResource DasboardButtonTheme}"
+                  Margin="0,20,00,0"
+                  VerticalAlignment="Center"
+                  Width="150"
+                  VerticalContentAlignment="Center"
+                  FontSize="15"
+                  Command="{Binding NavigateToBerandaCommand}"
+                  Checked="RadioButton_Checked"/>
+            <RadioButton Content="Barang Dipinjam"
+                  Style="{StaticResource DasboardButtonTheme}"
+                  Width="150"
+                  Margin="0,5,0,0"
+                  FontSize="15"
+                  Checked="rbtnBarangDipinjam_Checked"
+                  />
+            <RadioButton Content="Pengembalian Barang"
+                  Style="{StaticResource DasboardButtonTheme}"
+                  FontSize="15"
+                  Margin="0,5,0,0"
+                  Width="150"
+                  Checked="rbtnPengembalian_Checked"
+                  />
+            <RadioButton Content="List Users"
+                  Style="{StaticResource DasboardButtonTheme}"
+                  FontSize="15"
+                  Margin="0,5,0,0"
+                  Width="150"
+                  Checked="rbtnListUsers_Checked"
+                  />
+            </StackPanel>
+
+            <ContentControl Name="ctnControl" Grid.Column="1"/> -->
     </Grid>
 </Window>
