@@ -14,3 +14,6 @@ PiRang atau Pinjam baRang merupakan aplikasi desktop yang membantu suatu desa un
 
 # Activity Diagram
 ![](https://github.com/salwamhrn11/PiRang/blob/main/actDi.png)
+
+# Entity Relationship Diagram
+![](https://github.com/salwamhrn11/Pirang/blob/main/ERD.png)
